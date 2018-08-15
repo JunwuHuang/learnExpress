@@ -1,19 +1,24 @@
 const express = require('express')
-const path = require('path')
+const managerRouter = require('./route/managerRouter')
+const bodyParser = require('body-parser')
+const session = require('express-session')
 
 let app = express()
+app.set('trust proxy', 1) // trust first proxy
+app.use(session({
+    secret: 'keyboard cat',
+    resave: false,
+    saveUninitialized: true,
+    // cookie: {
+    //     secure: true
+    // }
+}))
 
 app.use(express.static('static'))
-
-app.get('/login', (request, response) => {
-    let targetPath = path.join(__dirname, './template/login.html')
-    response.sendFile(targetPath)
-})
-
-app.get('/regist', (request, response) => {
-    let targetPath = path.join(__dirname, './template/regist.html')
-    response.sendFile(targetPath)
-})
+app.use(bodyParser.urlencoded({
+    extended: false
+}))
+app.use('/manage', managerRouter)
 
 app.listen(3000, () => {
     console.log('Server is running at port:3000');
