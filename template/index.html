@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="../static/bootstrap/css/bootstrap.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10 offset-1">
+                <nav class="navbar navbar-light bg-light">
+                    <a class="navbar-brand">欢迎进入后台管理</a>
+                    <form class="form-inline">
+                        <!-- <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"> -->
+                        <span class="navbar-text">欢迎【<span class="text-info">死鸡咯来</span>】登录</span>
+                        <button class="btn btn-link text-danger" type="submit">退出</button>
+                    </form>
+                </nav>
+            </div>
+        </div>
+        <div class="row mt-4">
+            <div class="col-md-3 offset-1">
+                <div class="list-group">
+                    <a href="#" class="list-group-item list-group-item-action active">学生管理</a>
+                    <a href="#" class="list-group-item list-group-item-action">系统管理</a>
+                    <a href="#" class="list-group-item list-group-item-action">用户管理</a>
+                    <a href="#" class="list-group-item list-group-item-action">修改密码</a>
+                    <a href="#" class="list-group-item list-group-item-action">退出系统</a>
+                </div>
+            </div>
+            <div class="col-md-7">
+
+                <div class="card">
+                    <div class="card-header p-0">
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb bg-transparent mb-0">
+                                <li class="breadcrumb-item">
+                                    <a href="#">首页</a>
+                                </li>
+                                <li class="breadcrumb-item">
+                                    <a href="#">学生管理</a>
+                                </li>
+                                <li class="breadcrumb-item active" aria-current="page">学生列表</li>
+                            </ol>
+                        </nav>
+                    </div>
+                    <div class="card-header p-0">
+                        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+
+                            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+                                <form class="form-inline my-2 my-lg-0 w-100">
+                                    <div class="input-group input-group-sm w-50">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text" id="inputGroup-sizing-default">学生姓名</span>
+                                        </div>
+                                        <input class="form-control mr-sm-2" type="search" placeholder="请输入学生姓名进行查询" aria-label="Search">
+
+                                    </div>
+                                    <button class="btn btn-primary" type="submit">查找</button>
+                                    <a href="add.html" class="btn btn-outline-success ml-1" role="button">新增</a>
+                                </form>
+                            </div>
+                        </nav>
+                    </div>
+                    <div class="card-body">
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th scope="col">姓名</th>
+                                    <th scope="col">年龄</th>
+                                    <th scope="col">性别</th>
+                                    <th scope="col">手机号码</th>
+                                    <th scope="col">操作</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="align-middle">产品经理不好当</td>
+                                    <td class="align-middle">29</td>
+                                    <td class="align-middle">男</td>
+                                    <td class="align-middle">13844411111</td>
+                                    <td>
+                                        <button class="btn btn-outline-primary">编辑</button>
+                                        <span>|</span>
+                                        <button class="btn btn-danger">删除</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="align-middle">产品经理不好当</td>
+                                    <td class="align-middle">29</td>
+                                    <td class="align-middle">男</td>
+                                    <td class="align-middle">13844411111</td>
+                                    <td>
+                                        <button class="btn btn-outline-primary">编辑</button>
+                                        <span>|</span>
+                                        <button class="btn btn-danger">删除</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="align-middle">产品经理不好当</td>
+                                    <td class="align-middle">29</td>
+                                    <td class="align-middle">男</td>
+                                    <td class="align-middle">13844411111</td>
+                                    <td>
+                                        <button class="btn btn-outline-primary">编辑</button>
+                                        <span>|</span>
+                                        <button class="btn btn-danger">删除</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../static/jQuery/jquery-3.3.1.js"></script>
+    <script src="../static/bootstrap/js/bootstrap.bundle.js"></script>
+</body>
+
+</html>
