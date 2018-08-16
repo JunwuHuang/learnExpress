@@ -38,6 +38,6 @@ module.exports = {
         })
     },
     tips(response, message, url) {
-        response.send(`<script>window.alert(${ message });window.location=${ url }</script>`)
+        response.send(`<script>window.alert('${ message }');window.location='${ url }'</script>`)
     }
 }
