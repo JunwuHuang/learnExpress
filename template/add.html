@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <link rel="stylesheet" href="../static/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.css">
 </head>
 
 <body>
@@ -18,7 +18,7 @@
                     <form class="form-inline">
                         <!-- <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"> -->
                         <span class="navbar-text">欢迎【
-                            <span class="text-info">死鸡咯来</span>】登录</span>
+                            <span class="text-info">{{ username }}</span>】登录</span>
                         <button class="btn btn-link text-danger" type="submit">退出</button>
                     </form>
                 </nav>
@@ -40,7 +40,7 @@
                         <nav aria-label="breadcrumb">
                             <ol class="breadcrumb bg-transparent mb-0">
                                 <li class="breadcrumb-item">
-                                    <a href="#">首页</a>
+                                    <a href="/student/index">首页</a>
                                 </li>
                                 <li class="breadcrumb-item">
                                     <a href="#">学生管理</a>
@@ -99,8 +99,8 @@
             </div>
         </div>
     </div>
-    <script src="../static/jQuery/jquery-3.3.1.js"></script>
-    <script src="../static/bootstrap/js/bootstrap.bundle.js"></script>
+    <script src="/jQuery/jquery-3.3.1.js"></script>
+    <script src="/bootstrap/js/bootstrap.bundle.js"></script>
 </body>
 
 </html>

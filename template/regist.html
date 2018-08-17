@@ -51,7 +51,7 @@
     <script src="/md5/md5.js"></script>
     <script>
         $(() => {
-            $('.submit').on('click', (e) => {
+            $('.submit').on('click', () => {
                 let password = $('#inputPassword').val()
                 let hash = md5(password, 'keyboard cat')
                 $('#inputPassword').val(hash)

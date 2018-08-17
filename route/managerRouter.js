@@ -12,13 +12,19 @@ router.get('/login', (request, response) => {
 router.post('/login', (request, response) => {
     let username = request.body.username
     let password = request.body.password
-    let vcode = request.body.vcode
-    if(vcode == request.session.captcha) {
-        helper.find('admin', { username, password }, (result) => {
-            if(result.length == 1) helper.tips(response, '登录成功！', '/student/index')
-            else helper.tips(response, '用户名或密码错误！', '/manage/login')
+    let vcode = request.body.vcode.toLowerCase()
+    if (vcode == request.session.captcha) {
+        helper.find('admin', {
+            username,
+            password
+        }, (result) => {
+            if (result.length != 0) {
+                request.session.username = username
+                response.redirect('/student/index')
+            } else
+                helper.tips(response, '用户名或密码错误！', '/manage/login')
         })
-    }else {
+    } else {
         helper.tips(response, '验证码错误，请重新输入', '/manage/login')
     }
 })
@@ -59,7 +65,7 @@ router.post('/regist', (request, response) => {
 
 router.get('/captcha', (request, response) => {
     var captcha = svgCaptcha.create();
-    request.session.captcha = captcha.text;
+    request.session.captcha = captcha.text.toLowerCase();
     response.type('svg'); // 使用ejs等模板时如果报错 response.type('html')
     response.status(200).send(captcha.data);
 })

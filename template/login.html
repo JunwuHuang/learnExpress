@@ -15,23 +15,29 @@
             <div class="col-md-6 offset-md-3">
                 <div class="card border-primary">
                     <h4 class="card-header bg-primary text-white text-monospace">登录学生管理系统</h4>
-                    
+
                     <div class="card-body">
-                        <form>
+                        <form action="/manage/login" method="POST">
                             <div class="form-group row">
-                                <label for="inputPassword" class="col-sm-2 col-form-label text-right"><strong>用户名</strong></label>
+                                <label for="inputUsername" class="col-sm-2 col-form-label text-right">
+                                    <strong>用户名</strong>
+                                </label>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control" id="inputUsername" placeholder="请输入用户名">
+                                    <input type="text" name="username" class="form-control" id="inputUsername" placeholder="请输入用户名">
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label for="inputPassword" class="col-sm-2 col-form-label text-right"><strong>密码</strong></label>
+                                <label for="inputPassword" class="col-sm-2 col-form-label text-right">
+                                    <strong>密码</strong>
+                                </label>
                                 <div class="col-sm-10">
-                                    <input type="password" class="form-control" id="inputPassword" placeholder="请输入密码">
+                                    <input type="password" name="password" class="form-control" id="inputPassword" placeholder="请输入密码">
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label for="inputPassword" class="col-sm-2 col-form-label text-right"><strong>验证码</strong></label>
+                                <label for="inputVcode" class="col-sm-2 col-form-label text-right">
+                                    <strong>验证码</strong>
+                                </label>
                                 <div class="col-sm-6">
                                     <input type="text" name="vcode" class="form-control" id="inputVcode" placeholder="请输入验证码">
                                 </div>
@@ -41,7 +47,7 @@
                             </div>
                             <div class="form-group row mb-0">
                                 <div class="col-sm-10 offset-2">
-                                    <a href="#" class="btn btn-primary">登录</a>
+                                    <button type="submit" class="btn btn-primary login">登录</button>
                                     <a href="/manage/regist" class="btn btn-outline-primary offset-1">注册</a>
                                 </div>
                             </div>
@@ -54,9 +60,17 @@
     </div>
     <script src="/jQuery/jquery-3.3.1.js"></script>
     <script src="/bootstrap/js/bootstrap.bundle.js"></script>
+    <script src="/md5/md5.js"></script>
     <script>
-        $('.img-captcha').on('click', () => {
-            $('.img-captcha').attr('src', "/manage/captcha?" + Date.now())
+        $(() => {
+            $('.img-captcha').on('click', () => {
+                $('.img-captcha').attr('src', "/manage/captcha?" + Date.now())
+            })
+            $('.login').on('click', () => {
+                let password = $('#inputPassword').val()
+                let hash = md5(password, 'keyboard cat')
+                $('#inputPassword').val(hash)
+            })
         })
     </script>
 </body>

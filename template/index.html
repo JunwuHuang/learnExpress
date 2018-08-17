@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <link rel="stylesheet" href="../static/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.css">
 </head>
 
 <body>
@@ -17,8 +17,9 @@
                     <a class="navbar-brand">欢迎进入后台管理</a>
                     <form class="form-inline">
                         <!-- <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"> -->
-                        <span class="navbar-text">欢迎【<span class="text-info">死鸡咯来</span>】登录</span>
-                        <button class="btn btn-link text-danger" type="submit">退出</button>
+                        <span class="navbar-text">欢迎【
+                            <span class="text-info">{{ username }}</span>】登录</span>
+                        <a href="/student/logout" class="btn btn-link text-danger" role="button">退出</a>
                     </form>
                 </nav>
             </div>
@@ -63,7 +64,7 @@
 
                                     </div>
                                     <button class="btn btn-primary" type="submit">查找</button>
-                                    <a href="add.html" class="btn btn-outline-success ml-1" role="button">新增</a>
+                                    <a href="/student/add" class="btn btn-outline-success ml-1" role="button">新增</a>
                                 </form>
                             </div>
                         </nav>
@@ -80,7 +81,21 @@
                                 </tr>
                             </thead>
                             <tbody>
+                                {{ each }}
                                 <tr>
+                                    <td class="align-middle">产品经理不好当</td>
+                                    <td class="align-middle">29</td>
+                                    <td class="align-middle">男</td>
+                                    <td class="align-middle">13844411111</td>
+                                    <td>
+                                        <button class="btn btn-outline-primary">编辑</button>
+                                        <span>|</span>
+                                        <button class="btn btn-danger">删除</button>
+                                    </td>
+                                </tr>
+                                {{ /each }}
+
+                                <!-- <tr>
                                     <td class="align-middle">产品经理不好当</td>
                                     <td class="align-middle">29</td>
                                     <td class="align-middle">男</td>
@@ -101,18 +116,7 @@
                                         <span>|</span>
                                         <button class="btn btn-danger">删除</button>
                                     </td>
-                                </tr>
-                                <tr>
-                                    <td class="align-middle">产品经理不好当</td>
-                                    <td class="align-middle">29</td>
-                                    <td class="align-middle">男</td>
-                                    <td class="align-middle">13844411111</td>
-                                    <td>
-                                        <button class="btn btn-outline-primary">编辑</button>
-                                        <span>|</span>
-                                        <button class="btn btn-danger">删除</button>
-                                    </td>
-                                </tr>
+                                </tr> -->
                             </tbody>
                         </table>
                     </div>
@@ -120,8 +124,8 @@
             </div>
         </div>
     </div>
-    <script src="../static/jQuery/jquery-3.3.1.js"></script>
-    <script src="../static/bootstrap/js/bootstrap.bundle.js"></script>
+    <script src="/jQuery/jquery-3.3.1.js"></script>
+    <script src="/bootstrap/js/bootstrap.bundle.js"></script>
 </body>
 
 </html>
