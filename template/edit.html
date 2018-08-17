@@ -50,46 +50,47 @@
                         </nav>
                     </div>
                     <div class="card-body">
-                        <form action="/student/add" method="POST">
+                        <form action="/student/edit/{{@ data._id }}" method="POST">
                             <div class="form-group row">
                                 <label for="studentname" class="col-sm-2 col-form-label">姓名</label>
                                 <div class="col-sm-10">
-                                    <input required name="studentname" type="text" class="form-control" id="studentname" placeholder="请输入姓名">
+                                    <input required name="studentname" type="text" value="{{ data.studentname }}" class="form-control" id="studentname" placeholder="请输入姓名">
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <label for="age" class="col-sm-2 col-form-label">年龄</label>
                                 <div class="col-sm-10">
-                                    <input required name="age" type="text" class="form-control" id="age" placeholder="请输入年龄">
+                                    <input required name="age" type="text" value="{{ data.age }}" class="form-control" id="age" placeholder="请输入年龄">
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <label for="gender" class="col-sm-2 col-form-label">性别</label>
                                 <div class="col-sm-10">
-                                    <input required name="gender" type="text" class="form-control" id="gender" placeholder="请输入性别">
+                                    <input required name="gender" type="text" value="{{ data.gender }}" class="form-control" id="gender" placeholder="请输入性别">
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <label for="phonenumber" class="col-sm-2 col-form-label">电话</label>
                                 <div class="col-sm-10">
-                                    <input required name="phonenumber" type="text" class="form-control" id="phonenumber" placeholder="请输入电话">
+                                    <input required name="phonenumber" type="text" value="{{ data.phonenumber }}" class="form-control" id="phonenumber" placeholder="请输入电话">
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <label for="address" class="col-sm-2 col-form-label">地址</label>
                                 <div class="col-sm-10">
-                                    <input required name="address" type="text" class="form-control" id="address" placeholder="请输入地址">
+                                    <input required name="address" type="text" value="{{ data.address }}" class="form-control" id="address" placeholder="请输入地址">
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <label for="intro" class="col-sm-2 col-form-label">简介</label>
                                 <div class="col-sm-10">
-                                    <textarea required name="intro" class="form-control" placeholder="请输入简介" id="intro" rows="3"></textarea>
+                                    <textarea required name="intro" class="form-control" placeholder="请输入简介" id="intro" rows="3">{{ data.intro }}</textarea>
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <div class="col-sm-10 offset-2">
                                     <button type="submit" class="btn btn-outline-primary">保存</button>
+                                    <a href="/student/index" class="btn btn-outline-danger" role="button">取消</a>
                                 </div>
                             </div>
                         </form>

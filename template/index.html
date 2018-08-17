@@ -27,11 +27,11 @@
         <div class="row mt-4">
             <div class="col-md-3 offset-1">
                 <div class="list-group">
-                    <a href="#" class="list-group-item list-group-item-action active">学生管理</a>
+                    <a href="/student/index" class="list-group-item list-group-item-action active">学生管理</a>
                     <a href="#" class="list-group-item list-group-item-action">系统管理</a>
                     <a href="#" class="list-group-item list-group-item-action">用户管理</a>
                     <a href="#" class="list-group-item list-group-item-action">修改密码</a>
-                    <a href="#" class="list-group-item list-group-item-action">退出系统</a>
+                    <a href="/student/logout" class="list-group-item list-group-item-action">退出系统</a>
                 </div>
             </div>
             <div class="col-md-7">
@@ -41,10 +41,10 @@
                         <nav aria-label="breadcrumb">
                             <ol class="breadcrumb bg-transparent mb-0">
                                 <li class="breadcrumb-item">
-                                    <a href="#">首页</a>
+                                    <a href="/student/index">首页</a>
                                 </li>
                                 <li class="breadcrumb-item">
-                                    <a href="#">学生管理</a>
+                                    <a href="/student/index">学生管理</a>
                                 </li>
                                 <li class="breadcrumb-item active" aria-current="page">学生列表</li>
                             </ol>
@@ -60,7 +60,7 @@
                                         <div class="input-group-prepend">
                                             <span class="input-group-text" id="inputGroup-sizing-default">学生姓名</span>
                                         </div>
-                                        <input class="form-control mr-sm-2" type="search" placeholder="请输入学生姓名进行查询" aria-label="Search">
+                                        <input name="search" class="form-control mr-sm-2" type="search" placeholder="请输入学生姓名进行查询" aria-label="Search">
 
                                     </div>
                                     <button class="btn btn-primary" type="submit">查找</button>
@@ -81,42 +81,19 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                {{ each }}
+                                {{ each data }}
                                 <tr>
-                                    <td class="align-middle">产品经理不好当</td>
-                                    <td class="align-middle">29</td>
-                                    <td class="align-middle">男</td>
-                                    <td class="align-middle">13844411111</td>
+                                    <td class="align-middle">{{ $value.studentname }}</td>
+                                    <td class="align-middle">{{ $value.age }}</td>
+                                    <td class="align-middle">{{ $value.gender }}</td>
+                                    <td class="align-middle">{{ $value.phonenumber }}</td>
                                     <td>
-                                        <button class="btn btn-outline-primary">编辑</button>
+                                        <a href="/student/edit/{{@ $value._id }}" class="btn btn-outline-primary" role="button">编辑</a>
                                         <span>|</span>
-                                        <button class="btn btn-danger">删除</button>
+                                        <a href= "/student/delete/{{@ $value._id}}" class="btn btn-danger" role="button">删除</a>
                                     </td>
                                 </tr>
                                 {{ /each }}
-
-                                <!-- <tr>
-                                    <td class="align-middle">产品经理不好当</td>
-                                    <td class="align-middle">29</td>
-                                    <td class="align-middle">男</td>
-                                    <td class="align-middle">13844411111</td>
-                                    <td>
-                                        <button class="btn btn-outline-primary">编辑</button>
-                                        <span>|</span>
-                                        <button class="btn btn-danger">删除</button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="align-middle">产品经理不好当</td>
-                                    <td class="align-middle">29</td>
-                                    <td class="align-middle">男</td>
-                                    <td class="align-middle">13844411111</td>
-                                    <td>
-                                        <button class="btn btn-outline-primary">编辑</button>
-                                        <span>|</span>
-                                        <button class="btn btn-danger">删除</button>
-                                    </td>
-                                </tr> -->
                             </tbody>
                         </table>
                     </div>
